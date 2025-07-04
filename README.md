@@ -1,6 +1,4 @@
-## Getting Started
-
-<h3>This project for ai entegration for givergy platform</h3>
+## This project is a demo that simulates AI integration with the Givergy platform.
 
 First, create a file named .env to start the project. If you are running the project locally, fill in the .env file as shown below:
 
