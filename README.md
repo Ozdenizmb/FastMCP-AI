@@ -3,8 +3,12 @@
 First, create a file named .env to start the project. If you are running the project locally, fill in the .env file as shown below:
 
 ```bash
-USERNAME=YOUR_USERNAME
-PASSWORD=YOUR_PASSWORD
+OPENROUTER_API_KEY=YOUR_API_KEY
+MCP_URL=http://localhost:8000/mcp/
+USERNAME=YOUR_CLIENT_USERNAME
+PASSWORD=YOUR_CLIENT_PASSWORD
+EVENT_ID=35a77b4b-063f-11f0-91f9-62452ee26198
+GUEST_ID=764e819d-0642-11f0-91f9-62452ee26198
 ```
 
 Example AI prompt:
