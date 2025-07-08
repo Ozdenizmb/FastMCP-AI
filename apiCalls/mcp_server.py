@@ -8,11 +8,12 @@ mcp = FastMCP("GivergyCheckinBridge")
 http_client = httpx.Client()
 
 load_dotenv()
+EVENT_ID = os.getenv('EVENT_ID')
+GUEST_ID = os.getenv('GUEST_ID')
 
 login_data = {"csrf_token": None, "cookies": None}
 
-@mcp.tool()
-def login() -> dict:
+def _do_login() -> dict:
     username = os.getenv('USERNAME')
     password = os.getenv('PASSWORD')
     url = "http://localhost:8080/v1/localhost/auth/login"
@@ -35,11 +36,11 @@ def login() -> dict:
     return login_data
 
 @mcp.tool()
-def check_payment_status(event_id: str, guest_id: str, payment_id: str) -> dict:
+def check_payment_status(payment_id: str) -> dict:
     """Check the current payment status."""
     url = (
         f"http://localhost:8080/checkin/v1/events/"
-        f"{event_id}/guests/{guest_id}/payments/{payment_id}"
+        f"{EVENT_ID}/guests/{GUEST_ID}/payments/{payment_id}"
     )
     headers = {
         "X-CSRF-Token": login_data["csrf_token"],
@@ -54,8 +55,7 @@ def check_payment_status(event_id: str, guest_id: str, payment_id: str) -> dict:
         return {"❌ Error: ": f"{e}"}
 
 if __name__ == "__main__":
+    _do_login()
     mcp.run(
-        transport="http",
-        host="0.0.0.0",
-        port=8000
+        transport="stdio"
     )
