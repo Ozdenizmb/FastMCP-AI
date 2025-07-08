@@ -10,6 +10,14 @@ EVENT_ID=35a77b4b-063f-11f0-91f9-62452ee26198
 GUEST_ID=764e819d-0642-11f0-91f9-62452ee26198
 ```
 
+You can access the Agent UI and interact with the AI through that interface by running this command in the root folder:
+
+```bash
+adk web
+```
+
+If you don't want to use the ready-made interface, you can run the adk_agent.py file and communicate with the AI via the console. This part can be used for interface integration.
+
 Example AI prompt:
 
 ```bash

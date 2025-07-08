@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-import os
 from google.genai import types
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
 from google.adk.agents.llm_agent import LlmAgent
@@ -8,8 +7,6 @@ from google.adk.runners import Runner
 import asyncio
 
 load_dotenv()
-
-GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
 async def get_agent():
     tools = [
