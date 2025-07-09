@@ -1,11 +1,14 @@
-from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
+from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioConnectionParams, StdioServerParameters
 from google.adk.agents.llm_agent import LlmAgent
 
 tools = [
     MCPToolset(
-        connection_params = StdioServerParameters(
-            command="python",
-            args=["./apiCalls/mcp_server.py"]
+        connection_params = StdioConnectionParams(
+            server_params = StdioServerParameters(
+                command = "python",
+                args = ["./api/mcp_server.py"]
+            ),
+            timeout = 30
         )
     )
 ]

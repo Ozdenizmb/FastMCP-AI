@@ -10,6 +10,12 @@ EVENT_ID=35a77b4b-063f-11f0-91f9-62452ee26198
 GUEST_ID=764e819d-0642-11f0-91f9-62452ee26198
 ```
 
+To run the project, you need to install the following libraries within the project:
+```bash
+pip install google-adk
+pip install fastmcp
+```
+
 You can access the Agent UI and interact with the AI through that interface by running this command in the root folder:
 
 ```bash
@@ -22,4 +28,13 @@ Example AI prompt:
 
 ```bash
 Check the status of payment 07ffebbd-58b6-11f0-9d47-60452ee26198
+```
+```bash
+Can you access my event information and tell me what the platform buy now fee value is?
+```
+```bash
+Can you set the platform buy now fee of this event to 5?
+```
+```bash
+Is there an event with the sub URL "myfirst"?
 ```
